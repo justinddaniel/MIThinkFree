@@ -1,0 +1,10 @@
+<h1> Create a new Comment </h1>
+
+<%= form_for [@post, @comment] do |f| %>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div><br><br>
+
+  <%= f.submit %>
+<% end %>
