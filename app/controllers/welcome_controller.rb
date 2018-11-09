@@ -8,4 +8,7 @@ class WelcomeController < ApplicationController
     @user = current_user if current_user
   end
 
+  def about
+  end
+
 end
