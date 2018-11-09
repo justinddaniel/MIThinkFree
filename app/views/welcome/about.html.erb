@@ -1,7 +1,6 @@
 <h1> All about us: </h1>
 
-
-<%= button_to "Homepage", '/home', method: 'get' %>
+<%= button_to "Homepage", '/', method: 'get' %><br>
 
 <% if @user %>
   <p> Welcome <%= @user.email %>!</p><br>
