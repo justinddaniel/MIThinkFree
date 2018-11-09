@@ -1,1 +1,6 @@
 <h1> Welcome to Michigan Think Free! </h1>
+
+
+<% if @user %>
+  <%= button_to "Sign Out", 'users/sign_out', method: 'delete' %>
+<% end %>

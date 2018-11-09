@@ -1,8 +1,11 @@
+require 'pry'
+
 class WelcomeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
-    @user = User.find_by(id: session[:user_id])
+    #binding.pry
+    @user = current_user if current_user
   end
 
 end
