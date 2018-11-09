@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.5'
 
+gem 'pry'
+
 gem 'omniauth-facebook', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
