@@ -2,5 +2,8 @@
 
 
 <% if @user %>
+  <p> Welcome <%= @user.email %>!</p><br>
   <%= button_to "Sign Out", 'users/sign_out', method: 'delete' %>
+<% else %>
+  <%= button_to "Sign In", 'users/sign_in' %>
 <% end %>
