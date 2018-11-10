@@ -10,7 +10,7 @@
     <p> <%= comment.body %> </p><br>
   <% end %>
 
-  <%= button_to "Comment on this post", "posts/#{post.id}/comments/new", method: 'get' %>
+  <%= button_to "Join this discussion", "posts/#{post.id}", method: 'get' %>
 
 <% end %>
 
