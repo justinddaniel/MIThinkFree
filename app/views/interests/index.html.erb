@@ -1,5 +1,9 @@
 <h1> This page lists all of the different interests some group members are into. </h1>
 
+<h3> You can select the ones you are interested in, or create a new one! </h3>
+
+<%= collection_check_boxes(:current_user, :interest_id, @interests, :id, :title) %>
+
 <ul>
 <% @interests.each do |interest| %>
   <li> <%= interest.title %> </li>
@@ -11,7 +15,7 @@
 
 <% if @interest.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@interest.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <h2><%= pluralize(@interest.errors.count, "error") %> prohibited this interest from being saved:</h2>
 
     <ul>
     <% @interest.errors.full_messages.each do |msg| %>
