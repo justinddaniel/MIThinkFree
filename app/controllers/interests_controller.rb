@@ -11,10 +11,13 @@ class InterestsController < ApplicationController
   end
 
   def create
-    binding.pry
     @interest = Interest.new(title: params[:interest][:title], description: params[:interest][:description])
-    @interest.save
-    redirect_to interests_path
+    if @interest.save
+      redirect_to interests_path
+    else
+      @interests = Interest.all
+      render 'interests/index'
+    end
   end
 
   def edit

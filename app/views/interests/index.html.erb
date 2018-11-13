@@ -9,6 +9,18 @@
 
 <h3> Create a new interest </h3>
 
+<% if @interest.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@interest.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+    <ul>
+    <% @interest.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @interest do |f| %>
   <%= f.label "Title of New Interest" %>
   <%= f.text_field :title %><br><br>
