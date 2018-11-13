@@ -2900,3 +2900,178 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 430ms (Views: 350.1ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:51:51 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (725.1ms)
+Completed 500 Internal Server Error in 974ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create' for #<#<Class:0x000000000c201028>:0x000000000c1fb5d8>):
+     9: 
+    10: <h3> Create a new interest </h3>
+    11: 
+    12: <%= form_for @interest, url: {action: create} do |f| %>
+    13:   <%= f.text_field :title %>
+    14:   <%= f.text_area :description %>
+    15:   <%= f.check_box :interested? %>
+  
+app/views/interests/index.html.erb:12:in `_app_views_interests_index_html_erb__770130661_101715040'
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:52:42 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (213.0ms)
+Completed 500 Internal Server Error in 465ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `interested?' for #<Interest id: nil, title: nil, description: nil>):
+    12: <%= form_for @interest do |f| %>
+    13:   <%= f.text_field :title %>
+    14:   <%= f.text_area :description %>
+    15:   <%= f.check_box :interested? %>
+    16:   <%= f.submit "Create Interest" %>
+    17: <% end %>
+  
+app/views/interests/index.html.erb:15:in `block in _app_views_interests_index_html_erb__770130661_105015060'
+app/views/interests/index.html.erb:12:in `_app_views_interests_index_html_erb__770130661_105015060'
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:53:04 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 420ms (Views: 357.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:53:29 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 358ms (Views: 310.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:54:03 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 406ms (Views: 344.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:54:48 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 375ms (Views: 312.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 15:55:36 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 461ms (Views: 383.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2018-11-13 15:57:29 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2/vFxEe73Li8wsJ/oTxfH/pyElbJa1nCZF8yaj6l9yf+JbVdynJ3cBE0wPAql/KZORQxTnr1fsRYSgxvvARRYg==", "interest"=>{"title"=>"Astrophysics", "description"=>"Talk about the Big Bang, astronomy, latest research. "}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):4
+  [1m[36mInterest Create (8.0ms)[0m  [1m[32mINSERT INTO "interests" ("title", "description") VALUES (?, ?)[0m  [["title", "Astrophysics"], ["description", "Talk about the Big Bang, astronomy, latest research. "]]
+  ↳ (pry):4
+  [1m[35m (77.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):4
+Redirected to http://localhost:3000/interests
+Completed 302 Found in 246399ms (ActiveRecord: 85.8ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 16:01:36 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 398ms (Views: 290.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 16:02:05 -0500
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 382ms (Views: 329.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2018-11-13 16:05:06 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MzIUCJl/KB4NLXVRcXFuLhX4t8GYuByXXSK28jSD76UW7GSRFLaD1qDbd9762sOo1p6U2SsmO5FhN4j3tiJJ4A==", "interest"=>{"title"=>"Ham radio", "description"=>"Amateur interest in transmitting and receiving radio messages. "}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):7
+  [1m[36mInterest Create (3.0ms)[0m  [1m[32mINSERT INTO "interests" ("title", "description") VALUES (?, ?)[0m  [["title", "Ham radio"], ["description", "Amateur interest in transmitting and receiving radio messages. "]]
+  ↳ (pry):7
+  [1m[35m (100.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):7
+Redirected to http://localhost:3000/interests
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/interests_controller.rb:16
+  [1m[36mInterest Create (6.0ms)[0m  [1m[32mINSERT INTO "interests" ("title", "description") VALUES (?, ?)[0m  [["title", "Ham radio"], ["description", "Amateur interest in transmitting and receiving radio messages. "]]
+  ↳ app/controllers/interests_controller.rb:16
+  [1m[35m (108.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/interests_controller.rb:16
+Redirected to 
+Completed 500 Internal Server Error in 36782ms (ActiveRecord: 218.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/interests_controller.rb:17:in `create'
+Started GET "/interests" for 127.0.0.1 at 2018-11-13 16:06:19 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by InterestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/interests/index.html.erb:4
+  Rendered interests/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 1023ms (Views: 869.0ms | ActiveRecord: 4.5ms)
+
+
