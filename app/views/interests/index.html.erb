@@ -2,7 +2,10 @@
 
 <h3> You can select the ones you are interested in, or create a new one! </h3>
 
-<%= collection_check_boxes(:current_user, :interest_id, @interests, :id, :title) %>
+<form action='/interests'>
+  <%= collection_check_boxes(:current_user, :interest_ids, @interests, :id, :title) %>
+  <input type='submit'>
+</form>
 
 <ul>
 <% @interests.each do |interest| %>
@@ -32,3 +35,5 @@
   <%= f.text_area :description %><br><br>
   <%= f.submit "Create Interest" %>
 <% end %>
+
+<%= button_to "Go Home", root_path, method: 'get' %>

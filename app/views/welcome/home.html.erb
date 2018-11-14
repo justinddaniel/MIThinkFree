@@ -4,10 +4,12 @@
 
 <%= button_to "Discussion Board", '/posts', method: 'get' %><br>
 
+<%= button_to "Member Interests", '/interests', method: 'get' %> <br>
+
 
 <% if @user %>
   <p> Welcome <%= @user.email %>!</p><br>
-  <%= button_to "Your Homepage", @user, method: 'get' %>
+  <%= button_to "Your Homepage", @user, method: 'get' %><br>
   <%= button_to "Sign Out", 'users/sign_out', method: 'delete' %>
 <% else %>
   <%= button_to "Log In", 'users/sign_in' %><br>

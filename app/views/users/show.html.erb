@@ -1,1 +1,8 @@
 <h1> <%= @user.email %> Personal Page </h1>
+
+<h3> <%= @user.email %>'s personal interests </h3>
+
+<ul>
+<% @user.interests.each do |interest| %>
+  <li> <%= interest.title %> </li>
+<% end %>
