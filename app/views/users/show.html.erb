@@ -6,3 +6,7 @@
 <% @user.interests.each do |interest| %>
   <li> <%= interest.title %> </li>
 <% end %>
+
+<div>
+  <%= render partial: '/navigation' %>
+</div>
