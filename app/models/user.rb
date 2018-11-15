@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :interests, through: :user_interests
   has_many :posts
   has_many :comments
+  has_many :blogposts 
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
