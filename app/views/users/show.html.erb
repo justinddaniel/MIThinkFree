@@ -8,5 +8,24 @@
 <% end %>
 
 <div>
+  <% if @user.profile %>
+    <h3> <%= "#{@profile.real_name || @profile.alias} Profile" %> </h3>
+
+    <p> <%= "Birthday: #{@profile.birthday || 'No birthday shared'}" %> </p><br>
+
+    <p> <%= "Location: #{@profile.location || 'no location shared'}" %> </p><br>
+
+    <p> <%= "Biography: #{@profile.bio || 'No biography shared'}" %> </p><br>
+
+    <%= button_to "Edit Profile", edit_user_profile_path(@user.id), method: 'get' %>
+
+  <% else %>
+
+    <%= button_to "Create your profile", new_user_profile_path(@user.id), method: 'get' %>
+
+  <% end %>
+</div>
+
+<div>
   <%= render partial: '/navigation' %>
 </div>

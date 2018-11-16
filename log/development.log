@@ -4427,3 +4427,591 @@ Migrating to CreateBlogposts (20181115164357)
   ↳ C:/Ruby24-x64/bin/rake:23
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/bin/rake:23
+Migrating to CreateProfiles (20181115165546)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181115165546_create_profiles.rb:3
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "real_name" varchar, "alias" varchar, "birthday" varchar, "location" varchar, "bio" varchar)[0m
+  ↳ db/migrate/20181115165546_create_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181115165546"]]
+  ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[35m (136.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby24-x64/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-11-15 21:44:30 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (12.0ms)
+  Rendered welcome/home.html.erb within layouts/application (60.9ms)
+Started GET "/" for 127.0.0.1 at 2018-11-15 21:44:33 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (3.0ms)
+  Rendered welcome/home.html.erb within layouts/application (133.0ms)
+Completed 200 OK in 3181ms (Views: 3070.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2203ms (Views: 2110.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 21:44:40 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GVCdy0xJuX12JziXUmh63qGdvnEErUGRBDI5kI830og3OOaDwYriTiFAUFXgDUzAxykMNMJ2F/v6hA2zj3eWgw=="}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"GVCdy0xJuX12JziXUmh63qGdvnEErUGRBDI5kI830og3OOaDwYriTiFAUFXgDUzAxykMNMJ2F/v6hA2zj3eWgw=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (201.0ms)
+Completed 200 OK in 675ms (Views: 628.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 21:44:52 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uaKb+d418J0hZCISosQ+f5xd1x4a/q8w535vaDxRQ++XyuCxU/arrnYDStAQoQhh+ullW9wl+VoZyFtLPBEH5A==", "user"=>{"email"=>"justin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "justin@test.com"], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 622ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 21:44:52 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (3.0ms)
+  Rendered welcome/home.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 338ms (Views: 290.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 21:44:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 5.0ms)
+
+
+  
+SyntaxError (c:/Sites/MIThinkFree/app/views/users/show.html.erb:18: syntax error, unexpected tIVAR, expecting ')'
+.append=( "Birthday:" @profile.birthday || "no birthday shar
+                              ^
+c:/Sites/MIThinkFree/app/views/users/show.html.erb:20: syntax error, unexpected tIVAR, expecting ')'
+.append=( "Location:" @profile.location || "no location shar
+                              ^
+c:/Sites/MIThinkFree/app/views/users/show.html.erb:22: syntax error, unexpected tIVAR, expecting ')'
+append=( "Biography:" @profile.bio || "No biography shared" 
+                              ^):
+  
+app/views/users/show.html.erb:18: syntax error, unexpected tIVAR, expecting ')'
+app/views/users/show.html.erb:20: syntax error, unexpected tIVAR, expecting ')'
+app/views/users/show.html.erb:22: syntax error, unexpected tIVAR, expecting ')'
+append=( "Biography:" @profile.bio || "No biography shared" 
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 21:47:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/show.html.erb within layouts/application (328.1ms)
+Completed 500 Internal Server Error in 524ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"profiles", :id=>"1"}, missing required keys: [:user_id]):
+    25: 
+    26:   <% else %>
+    27: 
+    28:     <%= button_to "Create your profile", new_user_profile_path, method: 'get' %>
+    29: 
+    30:   <% end %>
+    31: </div>
+  
+app/views/users/show.html.erb:28:in `_app_views_users_show_html_erb___1661793487_110317980'
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 21:48:14 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (0.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (3.0ms)
+  Rendered users/show.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 350ms (Views: 306.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 21:48:33 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (0.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 332ms (Views: 278.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1/profiles/new" for 127.0.0.1 at 2018-11-15 21:48:46 -0500
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (334.0ms)
+Completed 500 Internal Server Error in 503ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `profiles_path' for #<#<Class:0x000000000d412960>:0x000000000d410fc0>
+Did you mean?  post_path):
+    2: 
+    3: <p> Note: you must have a real_name and/or alias </p>
+    4: 
+    5: <%= form_for @profile do |f| %>
+    6:   <div class="field">
+    7:     <%= f.label :real_name %>
+    8:     <%= f.text_field :real_name %>
+  
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb__457472329_111188620'
+Started GET "/users/1/profiles/new" for 127.0.0.1 at 2018-11-15 21:50:30 -0500
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 61ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/profiles_controller.rb:5:in `new'
+Started GET "/users/1/profiles/new" for 127.0.0.1 at 2018-11-15 21:51:16 -0500
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (317.6ms)
+Completed 500 Internal Server Error in 546ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_user_path' for #<#<Class:0x000000000d07c1e8>:0x000000000d0762e8>
+Did you mean?  user_profiles_path):
+    2: 
+    3: <p> Note: you must have a real_name and/or alias </p>
+    4: 
+    5: <%= form_for [@profile, @user] do |f| %>
+    6:   <div class="field">
+    7:     <%= f.label :real_name %>
+    8:     <%= f.text_field :real_name %>
+  
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb__457472329_109307260'
+Started GET "/users/1/profiles/new" for 127.0.0.1 at 2018-11-15 21:51:47 -0500
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (147.1ms)
+Completed 200 OK in 577ms (Views: 516.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/1/profiles" for 127.0.0.1 at 2018-11-15 21:52:56 -0500
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DKirfFUyvr7kgRGhnwn1oG65aR0PnJFRcqDU+XO5W7G5f1AXeLlQfwaDcd0Ganx/hqej7Xv41Kk8LikPIjrVvQ==", "profile"=>{"real_name"=>"Testbot1", "alias"=>"testie1", "birthday"=>"November 15, 2018", "location"=>"Grand Rapids", "bio"=>"I am just a humble testbot. "}, "commit"=>"Create Profile", "user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):15
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):18
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):18
+  [1m[36mProfile Create (11.0ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "real_name", "alias", "birthday", "location", "bio") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["real_name", "Testbot1"], ["alias", "testie1"], ["birthday", "November 15, 2018"], ["location", "Grand Rapids"], ["bio", "I am just a humble testbot. "]]
+  ↳ (pry):18
+  [1m[35m (439.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):18
+No template found for ProfilesController#create, rendering head :no_content
+Completed 204 No Content in 848594ms (ActiveRecord: 456.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:11:11 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (16.0ms)
+  Rendered welcome/home.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 1554ms (Views: 1410.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:11:14 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered welcome/home.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 393ms (Views: 359.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 22:11:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (82.0ms)
+Completed 500 Internal Server Error in 323ms (ActiveRecord: 8.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"profiles", :id=>"1"}, missing required keys: [:user_id]):
+    17: 
+    18:     <p> <%= "Biography: #{@profile.bio || 'No biography shared'}" %> </p><br>
+    19: 
+    20:     <%= button_to "Edit Profile", edit_user_profile_path, method: 'get' %>
+    21: 
+    22:   <% else %>
+    23: 
+  
+app/views/users/show.html.erb:20:in `_app_views_users_show_html_erb___983525199_104321620'
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 22:11:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (2.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (4.0ms)
+  Rendered users/show.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 696ms (Views: 587.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/1/profiles/1/edit" for 127.0.0.1 at 2018-11-15 22:22:37 -0500
+Processing by ProfilesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:32
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/edit.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 381ms (Views: 332.0ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/users/1/profiles/1" for 127.0.0.1 at 2018-11-15 22:23:37 -0500
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z+cY+ZnDNJ9CbmcvoYTA0g4lh9MOHICZuLiJf1PEYXfSMOOStEjaXqBsB1M450kN5jtNI3p4xWH2NnSJAkfvew==", "profile"=>{"real_name"=>"Testbot1", "alias"=>"", "birthday"=>"November 15, 2018", "location"=>"Grand Rapids", "bio"=>"I am just a humble testbot. And I no longer want to use an alias."}, "commit"=>"Edit Profile", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):11
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):11
+  [1m[36mProfile Update (2.0ms)[0m  [1m[33mUPDATE "profiles" SET "alias" = ?, "bio" = ? WHERE "profiles"."id" = ?[0m  [["alias", ""], ["bio", "I am just a humble testbot. And I no longer want to use an alias."], ["id", 1]]
+  ↳ (pry):11
+  [1m[35m (82.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):11
+No template found for ProfilesController#update, rendering head :no_content
+Completed 204 No Content in 401162ms (ActiveRecord: 89.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:34:04 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (3.0ms)
+  Rendered welcome/home.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 915ms (Views: 835.9ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-15 22:34:11 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SjsDdhEyF8glkIsmx2LVLuzl6oUAiw1AS0RznUg4T9L/7PgdPLn5CceS61peAVzxBPsgdXTvSLgFyo5rGbvB3g=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 111ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:34:11 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered welcome/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 324ms (Views: 285.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:34:13 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"o/baFrIZ8e9AB9bDu2FvB+8GpGIZO83zKN1c6uxxBTZxLkTJxjeYND6+dmryb+zx9JH3mFGrmCGdR1tS14TC+w=="}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"o/baFrIZ8e9AB9bDu2FvB+8GpGIZO83zKN1c6uxxBTZxLkTJxjeYND6+dmryb+zx9JH3mFGrmCGdR1tS14TC+w=="}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 551ms (Views: 546.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:34:22 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HO51jN6tuacw2l85aU4Nt3HtBwxIizezGzYzuSo7w4bONutTqoPQfE5j/5AgQI5BanpU9gAbYmGurDQBEc4ESw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 463ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:34:22 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (4.0ms)
+  Rendered welcome/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 346ms (Views: 315.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-11-15 22:34:26 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered posts/index.html.erb within layouts/application (143.1ms)
+Completed 200 OK in 523ms (Views: 384.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-11-15 22:34:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 419ms (Views: 338.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/2/profiles/new" for 127.0.0.1 at 2018-11-15 22:34:34 -0500
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 350ms (Views: 301.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/2/profiles" for 127.0.0.1 at 2018-11-15 22:35:03 -0500
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6jFDabnP6ijmO8fjLqSUtZZiZKv8Bg++SqiO529JKjifuVKpK/SFjZr3k4J0DJu5bkwexzIkotleyvQoSJja5Q==", "profile"=>{"real_name"=>"Testbot2", "alias"=>"", "birthday"=>"November 15th, 2018", "location"=>"Grand Rapids", "bio"=>"I am the second testbot. "}, "commit"=>"Create Profile", "user_id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[36mProfile Create (3.0ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "real_name", "alias", "birthday", "location", "bio") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["real_name", "Testbot2"], ["alias", ""], ["birthday", "November 15th, 2018"], ["location", "Grand Rapids"], ["bio", "I am the second testbot. "]]
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[35m (102.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 150ms (ActiveRecord: 106.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-11-15 22:35:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (0.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/show.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 449ms (Views: 360.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/2/profiles/2/edit" for 127.0.0.1 at 2018-11-15 22:35:08 -0500
+Processing by ProfilesController#edit as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:27
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 325ms (Views: 286.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/users/2/profiles/2" for 127.0.0.1 at 2018-11-15 22:37:04 -0500
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IlH+JEwHkOTfbKlZKhXCwS9l/dJq8XhqSP8aEyHcvtFX2e/k3jz/QaOg/Thwvc3N10uHvqTT1Q1cnWDcBg1ODA==", "profile"=>{"real_name"=>"Testbot2", "alias"=>"", "birthday"=>"November 15th, 2018, 10:36 PM", "location"=>"Grand Rapids, MI", "bio"=>"I am the second testbot. "}, "commit"=>"Edit Profile", "user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:31
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `save' for #<ActionController::Parameters:0x000000000b779ab0>):
+  
+app/controllers/profiles_controller.rb:38:in `update'
+Started PATCH "/users/2/profiles/2" for 127.0.0.1 at 2018-11-15 22:37:26 -0500
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IlH+JEwHkOTfbKlZKhXCwS9l/dJq8XhqSP8aEyHcvtFX2e/k3jz/QaOg/Thwvc3N10uHvqTT1Q1cnWDcBg1ODA==", "profile"=>{"real_name"=>"Testbot2", "alias"=>"", "birthday"=>"November 15th, 2018, 10:36 PM", "location"=>"Grand Rapids, MI", "bio"=>"I am the second testbot. "}, "commit"=>"Edit Profile", "user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/profiles_controller.rb:38
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:38
+  [1m[36mProfile Update (4.0ms)[0m  [1m[33mUPDATE "profiles" SET "birthday" = ?, "location" = ? WHERE "profiles"."id" = ?[0m  [["birthday", "November 15th, 2018, 10:36 PM"], ["location", "Grand Rapids, MI"], ["id", 2]]
+  ↳ app/controllers/profiles_controller.rb:38
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/profiles_controller.rb:38
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 206ms (ActiveRecord: 116.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-11-15 22:37:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (2.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered _navigation.html.erb (3.0ms)
+  Rendered users/show.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 534ms (Views: 450.1ms | ActiveRecord: 7.0ms)
+
+

@@ -1,0 +1,32 @@
+<h1> Make New Profile </h1>
+
+<p> Note: you must have a real_name and/or alias </p>
+
+<%= form_for [@user, @profile] do |f| %>
+  <div class="field">
+    <%= f.label :real_name %>
+    <%= f.text_field :real_name %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :alias %>
+    <%= f.text_field :alias %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.text_field :birthday %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div><br><br>
+
+  <%= f.submit "Create Profile" %>
+<% end %>

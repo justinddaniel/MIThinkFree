@@ -1,0 +1,44 @@
+<h1> Your current profile </h1>
+
+<h3> <%= "Real name: #{@profile.real_name || 'None shared'}" %> </h3>
+
+<h3> <%= "Alias: #{@profile.alias || 'None shared'}" %> </h3>
+
+<p> <%= "Birthday: #{@profile.birthday || 'No birthday shared'}" %> </p><br>
+
+<p> <%= "Location: #{@profile.location || 'no location shared'}" %> </p><br>
+
+<p> <%= "Biography: #{@profile.bio || 'No biography shared'}" %> </p><br>
+
+<h1> Edit Your Profile </h1>
+
+<p> Note: you must have a real_name and/or alias </p>
+
+<%= form_for [@user, @profile] do |f| %>
+  <div class="field">
+    <%= f.label :real_name %>
+    <%= f.text_field :real_name %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :alias %>
+    <%= f.text_field :alias %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.text_field :birthday %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div><br><br>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div><br><br>
+
+  <%= f.submit "Edit Profile" %>
+<% end %>

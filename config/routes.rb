@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :profiles, only: [:new, :create, :edit, :update]
+  end
   resources :interests
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

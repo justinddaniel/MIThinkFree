@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_164357) do
+ActiveRecord::Schema.define(version: 2018_11_15_165546) do
 
   create_table "blogposts", force: :cascade do |t|
     t.string "title"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2018_11_15_164357) do
     t.string "title"
     t.string "body"
     t.integer "user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "real_name"
+    t.string "alias"
+    t.string "birthday"
+    t.string "location"
+    t.string "bio"
   end
 
   create_table "user_interests", force: :cascade do |t|
