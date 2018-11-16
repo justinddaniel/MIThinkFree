@@ -27,5 +27,31 @@
 </div>
 
 <div>
+  <% @blogposts.each do |blogpost| %>
+    <h3> <%= blogpost.title %> </h3><br>
+
+    <p> <%= blogpost.body %> </p> <br>
+
+  <% end %>
+</div>
+
+<div>
+  <h3> Make a new blogpost </h3><br>
+  <%= form_for [@user, @blogpost ||= Blogpost.new] do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div><br>
+
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div><br>
+
+    <%= f.submit "Create Blogpost" %>
+  <% end %>
+</div>
+
+<div>
   <%= render partial: '/navigation' %>
 </div>
