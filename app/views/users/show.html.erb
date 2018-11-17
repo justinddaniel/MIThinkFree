@@ -7,7 +7,9 @@
   <li> <%= interest.title %> </li>
 <% end %>
 
-<%= button_to 'Edit your interests', '/interests', method: 'get' %>
+<% if params[:id] == current_user.id %>
+  <%= button_to 'Edit your interests', '/interests', method: 'get' %>
+<% end %>
 
 <div>
   <% if @user.profile %>
@@ -19,7 +21,9 @@
 
     <p> <%= "Biography: #{@profile.bio || 'No biography shared'}" %> </p><br>
 
-    <%= button_to "Edit Profile", edit_user_profile_path(@user.id), method: 'get' %>
+    <% if params[:id] == current_user.id %>
+      <%= button_to "Edit Profile", edit_user_profile_path(@user.id), method: 'get' %>
+    <% end %>
 
   <% else %>
 
@@ -45,22 +49,24 @@
   <% end %>
 </div>
 
-<div>
-  <h3> Make a new blogpost </h3>
-  <%= form_for [@user, @blogpost] do |f| %>
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div><br>
+<% if params[:id] == current_user.id %>
+  <div>
+    <h3> Make a new blogpost </h3>
+    <%= form_for [@user, @blogpost] do |f| %>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div><br>
 
-    <div class="field">
-      <%= f.label :body %>
-      <%= f.text_area :body %>
-    </div><br>
+      <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </div><br>
 
-    <%= f.submit "Create Blogpost" %>
-  <% end %>
-</div>
+      <%= f.submit "Create Blogpost" %>
+    <% end %>
+  </div>
+<% end %>
 
 <div>
   <%= render partial: '/navigation' %>
