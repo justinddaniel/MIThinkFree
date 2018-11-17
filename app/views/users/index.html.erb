@@ -1,0 +1,16 @@
+<h1> Listing of member blog pages </h1>
+
+<p> <%= @users.count %> blogs and counting! </p>
+
+<% @users.each do |user| %>
+  <% if user.profile %>
+    <% name = user.profile.real_name || name = user.profile.alias %>
+    <%= button_to "See #{name}'s blog", user_path(user.id), method: 'get' %><br>
+  <% else %>
+    <%= button_to "See #{user.email} blog", user_path(user.id), method: 'get' %><br>
+  <% end %>
+<% end %>
+
+<div>
+  <%= render partial: '/navigation' %>
+</div>
