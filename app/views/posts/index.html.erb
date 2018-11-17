@@ -1,13 +1,14 @@
 <h1> Here is what we are talking about! </h1>
 
 <% @posts.each do |post| %>
-  <h3> <%= post.title %> </h3><br>
-  <p> <%= post.body %> </p> <br>
-  <p> posted by: <%= post.user.email %> </p> <br><br>
+  <h3> <%= "#{post.title}, [posted at #{post.created_at}]" %> </h3>
+  <p> <%= post.body %> </p>
+  <p> posted by: <%= post.user.email %> </p> <br>
 
   <% post.comments.each do |comment| %>
-    <p> <%= comment.user.email %> replied: </p><br>
-    <p> <%= comment.body %> </p><br>
+    <p> <%= comment.user.email %> replied: </p>
+    <p> <%= comment.body %> </p>
+    <p> [At <%= comment.created_at %>] </p>
   <% end %>
 
   <%= button_to "Join this discussion", "posts/#{post.id}", method: 'get' %>
