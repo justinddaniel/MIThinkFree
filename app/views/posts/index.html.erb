@@ -9,9 +9,13 @@
     <p> <%= comment.user.email %> replied: </p>
     <p> <%= comment.body %> </p>
     <p> [At <%= comment.created_at %>] </p>
+    <% if comment.user_id == current_user.id %>
+      <%= button_to 'Delete comment', post_comment_path(post.id, comment.id), method: 'delete' %>
+    <% end %>
+
   <% end %>
 
-  <%= button_to "Join this discussion", "posts/#{post.id}", method: 'get' %>
+  <%= button_to "Join this discussion", post_path(post.id), method: 'get' %>
 
 <% end %>
 
