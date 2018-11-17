@@ -11505,3 +11505,718 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 529ms (Views: 484.4ms | ActiveRecord: 2.0ms)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-17 16:57:09 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Oh1GR/9Jg5LZixl0XvXuWtd2aoLj+mpY735PWSoJ/JXHBTFEIeJ1GcQuJAZqgRNzapoWPgxE+d+cgpcPEUCEiw=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 47ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-17 16:57:09 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (2.1ms)
+  Rendered welcome/home.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 263ms (Views: 233.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-17 16:57:13 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 414ms (Views: 411.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 16:57:18 -0500
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-17 16:57:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 383ms (Views: 379.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-17 16:57:22 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 297ms (Views: 296.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-17 16:57:38 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXsM5+3wk0tjcNp5O2Bzi5ftq4jc4e7yReeRIuR3/HzQAi/6jd1AJsm8NlGMhkWlwy9g/0i3IRBYrhF1PVIKlw==", "user"=>{"email"=>"test5@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test5@test.com"], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (16.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test5@test.com"], ["encrypted_password", "$2a$11$VNzJh39Rjz6zn1G5.jdekujamLWOrNBYzeL6HID593YQhiGON37Dq"], ["created_at", "2018-11-17 21:57:38.626990"], ["updated_at", "2018-11-17 21:57:38.626990"]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (92.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 921ms (ActiveRecord: 108.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-17 16:57:39 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (5.0ms)
+  Rendered welcome/home.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 398ms (Views: 366.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-11-17 16:57:53 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered posts/index.html.erb within layouts/application (135.0ms)
+Completed 200 OK in 389ms (Views: 340.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-11-17 16:58:03 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered posts/show.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 466ms (Views: 338.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/posts/5/comments" for 127.0.0.1 at 2018-11-17 16:58:14 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h/zH0ozKc/esRJmp4QXQpNtbmpGx/NhwJPIUunIo0G+gRIHvKe85x0ci+zQLyGk3fvoac6OeA6KCbMmY1oEZBw==", "comment"=>{"body"=>"Hi everyone! I am a new test bot!"}, "commit"=>"Create Comment", "post_id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:13
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13
+  [1m[36mComment Create (5.0ms)[0m  [1m[32mINSERT INTO "comments" ("body", "post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hi everyone! I am a new test bot!"], ["post_id", 5], ["user_id", 5], ["created_at", "2018-11-17 21:58:15.213566"], ["updated_at", "2018-11-17 21:58:15.213566"]]
+  ↳ app/controllers/comments_controller.rb:13
+  [1m[35m (193.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:13
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 219ms (ActiveRecord: 199.9ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-11-17 16:58:15 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 330ms (Views: 275.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-17 16:58:24 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered welcome/home.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 253ms (Views: 224.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2018-11-17 16:58:26 -0500
+Processing by WelcomeController#about as HTML
+  Rendering welcome/about.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/_navigation.html.erb:1
+  Rendered _navigation.html.erb (4.9ms)
+  Rendered welcome/about.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 311ms (Views: 279.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-17 16:58:30 -0500
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered welcome/home.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 281ms (Views: 244.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-11-17 16:58:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered posts/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 293ms (Views: 263.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-11-17 16:58:42 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/new.html.erb within layouts/application
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered posts/new.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 345ms (Views: 261.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-11-17 16:59:02 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a1ugp2DiXP8s1+zUiudQHMxwt4FYV0TGew50xUL4eQtM4+aaxccWz8exjklgKumPadE3Y0o1nxTdkKnn5lGwYw==", "post"=>{"title"=>"So far the tests are working!", "body"=>"Let's hope it stays that way!"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[36mPost Create (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "So far the tests are working!"], ["body", "Let's hope it stays that way!"], ["user_id", 5], ["created_at", "2018-11-17 21:59:02.438799"], ["updated_at", "2018-11-17 21:59:02.438799"]]
+  ↳ app/controllers/posts_controller.rb:17
+  [1m[35m (164.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:17
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 185ms (ActiveRecord: 168.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-11-17 16:59:02 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered posts/index.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 817ms (Views: 547.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-11-17 16:59:43 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? ORDER BY "comments"."id" DESC LIMIT ?[0m  [["post_id", 7], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered posts/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 390ms (Views: 344.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-11-17 16:59:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mProfile Load (3.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (0.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mBlogpost Load (0.9ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts" WHERE "blogposts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 306ms (Views: 239.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 16:59:56 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 297ms (Views: 259.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-11-17 17:00:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (0.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts" WHERE "blogposts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/show.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 360ms (Views: 291.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/5/profiles/new" for 127.0.0.1 at 2018-11-17 17:00:09 -0500
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 369ms (Views: 299.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/5/profiles" for 127.0.0.1 at 2018-11-17 17:06:01 -0500
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uru/hk5UtNWzbdPFi7ZU93U3lBY3XjKZawd4x7MK8ep1A/m763H+5VgLsVhhe+1k0JYU9CU86UvNmaXlF6M4gg==", "profile"=>{"real_name"=>"", "alias"=>"", "birthday"=>"Nov 17, 2018", "location"=>"Kalamazoo", "bio"=>"Testing"}, "commit"=>"Create Profile", "user_id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <p> Note: you must have a real_name and/or alias </p>
+    4: 
+    5: <%= form_for [@user, @profile] do |f| %>
+    6:   <div class="field">
+    7:     <%= f.label :real_name %>
+    8:     <%= f.text_field :real_name %>
+  
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb__1871899491_110650400'
+app/controllers/profiles_controller.rb:21:in `create'
+Started POST "/users/5/profiles" for 127.0.0.1 at 2018-11-17 17:08:32 -0500
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uru/hk5UtNWzbdPFi7ZU93U3lBY3XjKZawd4x7MK8ep1A/m763H+5VgLsVhhe+1k0JYU9CU86UvNmaXlF6M4gg==", "profile"=>{"real_name"=>"", "alias"=>"", "birthday"=>"Nov 17, 2018", "location"=>"Kalamazoo", "bio"=>"Testing"}, "commit"=>"Create Profile", "user_id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 411ms (Views: 317.9ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/users/5/profiles" for 127.0.0.1 at 2018-11-17 17:09:01 -0500
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hV8s5y40rSyTEw8Rl4YnlIfUqZJdZrMuBGsPijLGjqOi52raixHnHHh1bYx9S54HInUpcE8EaPyi9dKolm9Hyw==", "profile"=>{"real_name"=>"", "alias"=>"Test model X5", "birthday"=>"Nov 17, 2018", "location"=>"Kalamazoo", "bio"=>"I am the 5th gen test bot. "}, "commit"=>"Create Profile", "user_id"=>"5"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[36mProfile Create (16.0ms)[0m  [1m[32mINSERT INTO "profiles" ("user_id", "real_name", "alias", "birthday", "location", "bio") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 5], ["real_name", ""], ["alias", "Test model X5"], ["birthday", "Nov 17, 2018"], ["location", "Kalamazoo"], ["bio", "I am the 5th gen test bot. "]]
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[35m (230.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/profiles_controller.rb:18
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 262ms (ActiveRecord: 246.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-11-17 17:09:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (1.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts" WHERE "blogposts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered _navigation.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 512ms (Views: 395.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 17:09:10 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/index.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 327ms (Views: 289.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 17:11:40 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered _navigation.html.erb (5.0ms)
+  Rendered users/index.html.erb within layouts/application (105.0ms)
+Completed 200 OK in 511ms (Views: 426.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 17:15:32 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 325ms (Views: 268.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2018-11-17 17:15:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mInterest Load (0.0ms)[0m  [1m[34mSELECT "interests".* FROM "interests" INNER JOIN "user_interests" ON "interests"."id" = "user_interests"."interest_id" WHERE "user_interests"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:8
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts" WHERE "blogposts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:39
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/show.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 473ms (Views: 321.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 17:16:03 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered _navigation.html.erb (2.0ms)
+  Rendered users/index.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 436ms (Views: 390.1ms | ActiveRecord: 7.0ms)
+
+
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-11-17 17:19:12 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:8
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered welcome/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 855ms (Views: 778.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-17 17:19:17 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mProfile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:6
+  Rendered _navigation.html.erb (1.0ms)
+  Rendered users/index.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 496ms (Views: 452.4ms | ActiveRecord: 7.0ms)
+
+

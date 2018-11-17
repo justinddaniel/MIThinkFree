@@ -18,6 +18,8 @@ class ProfilesController < ApplicationController
     if profile.save
       redirect_to "/users/#{current_user.id}"
     else
+      @profile = Profile.new
+      @user = current_user
       render :new
     end
   end

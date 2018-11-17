@@ -3,7 +3,7 @@
 <span> To comment on a post, click 'Join this discussion' </span>
 
 <% @posts.each do |post| %>
-  <h3> <%= "#{post.title}, [posted at #{post.created_at}]" %> </h3>
+  <h3> <%= "#{post.title} [posted at #{post.created_at}]" %> </h3>
   <p> <%= post.body %> </p>
   <p> posted by: <%= post.user.email %> </p> <br>
   <% if post.user_id == current_user.id %>

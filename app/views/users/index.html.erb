@@ -4,7 +4,11 @@
 
 <% @users.each do |user| %>
   <% if user.profile %>
-    <% name = user.profile.real_name || name = user.profile.alias %>
+    <% if !user.profile.real_name.empty? %>
+      <% name = user.profile.real_name %>
+    <% else %>
+      <% name = user.profile.alias %>
+    <% end %>
     <%= button_to "See #{name}'s blog", user_path(user.id), method: 'get' %><br>
   <% else %>
     <%= button_to "See #{user.email} blog", user_path(user.id), method: 'get' %><br>
