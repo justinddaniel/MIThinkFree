@@ -1,8 +1,9 @@
 <h1> <%= @post.title %> </h1>
 
 <% @post.comments.each do |comment| %>
-  <p> <%= comment.user.email %> said: <br>
-      <%= comment.body %> </p> <br>
+  <p> <strong> <%= comment.user.email %> said: </strong> </p>
+  <p> <%= comment.body %> </p>
+  <p> Commented on [ <%= comment.created_at %> ] </p>
       <% if comment.user_id == current_user.id %>
         <%= button_to 'Delete comment', post_comment_path(@post.id, comment.id), method: 'delete' %>
       <% end %>

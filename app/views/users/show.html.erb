@@ -6,9 +6,10 @@
 <% @user.interests.each do |interest| %>
   <li> <%= interest.title %> </li>
 <% end %>
+</ul>
 
-<% if params[:id] == current_user.id %>
-  <%= button_to 'Edit your interests', '/interests', method: 'get' %>
+<% if params[:id].to_i == current_user.id %>
+  <%= button_to 'Edit your interests', '/interests', method: 'get' %><br>
 <% end %>
 
 <div>
@@ -21,7 +22,7 @@
 
     <p> <%= "Biography: #{@profile.bio || 'No biography shared'}" %> </p><br>
 
-    <% if params[:id] == current_user.id %>
+    <% if params[:id].to_i == current_user.id %>
       <%= button_to "Edit Profile", edit_user_profile_path(@user.id), method: 'get' %>
     <% end %>
 
@@ -49,7 +50,7 @@
   <% end %>
 </div>
 
-<% if params[:id] == current_user.id %>
+<% if params[:id].to_i == current_user.id %>
   <div>
     <h3> Make a new blogpost </h3>
     <%= form_for [@user, @blogpost] do |f| %>
