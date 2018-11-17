@@ -16,9 +16,16 @@ class BlogpostsController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    @blogpost = Blogpost.find(params[:id])
   end
 
   def update
+    blogpost = Blogpost.find(params[:id])
+    blogpost.title = params[:blogpost][:title] if params[:blogpost][:title]
+    blogpost.body = params[:blogpost][:body] if params[:blogpost][:body]
+    blogpost.save
+    redirect_to "/users/#{params[:user_id]}"
   end
 
   def destroy

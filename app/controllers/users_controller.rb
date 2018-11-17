@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user.profile ? @profile = @user.profile : @profile = Profile.new
     @blogposts = @user.blogposts
-    @blopost = Blogpost.new
+    @blogpost = Blogpost.new
   end
 
   private

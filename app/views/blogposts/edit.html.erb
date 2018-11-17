@@ -1,0 +1,16 @@
+<div>
+  <h1> Edit blogpost </h1>
+  <%= form_for [@user, @blogpost] do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div><br>
+
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div><br>
+
+    <%= f.submit "Edit Blogpost" %>
+  <% end %>
+</div>

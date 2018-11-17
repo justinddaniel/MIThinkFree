@@ -28,16 +28,22 @@
 
 <div>
   <% @blogposts.each do |blogpost| %>
-    <h3> <%= blogpost.title %> </h3><br>
+    <h3> <%= "#{blogpost.title} (posted at: #{blogpost.created_at})" %> </h3>
 
-    <p> <%= blogpost.body %> </p> <br>
+    <p> <%= blogpost.body %> </p>
+
+    <% if blogpost.user == current_user %>
+
+      <%= button_to 'Edit Post', edit_user_blogpost_path(@user.id, blogpost.id), method: 'get' %>
+
+    <% end %>
 
   <% end %>
 </div>
 
 <div>
-  <h3> Make a new blogpost </h3><br>
-  <%= form_for [@user, @blogpost ||= Blogpost.new] do |f| %>
+  <h3> Make a new blogpost </h3>
+  <%= form_for [@user, @blogpost] do |f| %>
     <div class="field">
       <%= f.label :title %>
       <%= f.text_field :title %>
