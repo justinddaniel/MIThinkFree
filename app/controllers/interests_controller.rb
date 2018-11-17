@@ -9,7 +9,7 @@ class InterestsController < ApplicationController
       interests.each do |interest_id|
         if interest_id.to_i && !interest_id.empty?
           interest = Interest.find(interest_id.to_i)
-          current_user.interests << interest if interest
+          current_user.interests << interest if interest && !current_user.interests.include?(interest)
         end
       end
     end
@@ -20,7 +20,6 @@ class InterestsController < ApplicationController
   end
 
   def create
-    binding.pry
     @interest = Interest.new(title: params[:interest][:title], description: params[:interest][:description])
     if @interest.save
       redirect_to interests_path
