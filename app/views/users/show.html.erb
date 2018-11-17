@@ -36,7 +36,9 @@
 
     <% if blogpost.user == current_user %>
 
-      <%= button_to 'Edit Post', edit_user_blogpost_path(@user.id, blogpost.id), method: 'get' %>
+      <%= button_to 'Edit Post', edit_user_blogpost_path(@user.id, blogpost.id), method: 'get' %><br>
+
+      <%= button_to 'Delete Post', user_blogpost_path(@user.id, blogpost.id), method: 'delete' %>
 
     <% end %>
 

@@ -29,6 +29,9 @@ class BlogpostsController < ApplicationController
   end
 
   def destroy
+    blogpost = Blogpost.find(params[:id])
+    blogpost.destroy
+    redirect_to "/users/#{params[:user_id]}"
   end
 
 end
