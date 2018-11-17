@@ -1,5 +1,7 @@
 <h1> Here is what we are talking about! </h1>
 
+<span> To comment on a post, click 'Join this discussion' </span>
+
 <% @posts.each do |post| %>
   <h3> <%= "#{post.title}, [posted at #{post.created_at}]" %> </h3>
   <p> <%= post.body %> </p>
@@ -8,15 +10,16 @@
     <%= button_to 'Delete post', post_path(post.id), method: 'delete' %><br>
   <% end %>
 
-  <% post.comments.each do |comment| %>
-    <p> <%= comment.user.email %> replied: </p>
-    <p> <%= comment.body %> </p>
-    <p> [At <%= comment.created_at %>] </p>
-    <% if comment.user_id == current_user.id %>
-      <%= button_to 'Delete comment', post_comment_path(post.id, comment.id), method: 'delete' %><br>
+    <% if post.comments.last %>
+      <% comment = post.comments.last %>
+      <p> <strong> Latest Comment: </strong> </p>
+      <p> <%= comment.user.email %> replied: </p>
+      <p> <%= comment.body %> </p>
+      <p> [At <%= comment.created_at %>] </p>
+      <% if comment.user_id == current_user.id %>
+        <%= button_to 'Delete comment', post_comment_path(post.id, comment.id), method: 'delete' %><br>
+      <% end %>
     <% end %>
-
-  <% end %>
 
   <%= button_to "Join this discussion", post_path(post.id), method: 'get' %>
 
