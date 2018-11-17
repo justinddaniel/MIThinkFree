@@ -6,6 +6,7 @@ class InterestsController < ApplicationController
     @interest = Interest.new
     interests = params[:current_user][:interest_ids] if params[:current_user] && params[:current_user][:interest_ids]
     if interests
+      current_user.interests.clear
       interests.each do |interest_id|
         if interest_id.to_i && !interest_id.empty?
           interest = Interest.find(interest_id.to_i)

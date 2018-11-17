@@ -7,6 +7,8 @@
   <li> <%= interest.title %> </li>
 <% end %>
 
+<%= button_to 'Edit your interests', '/interests', method: 'get' %>
+
 <div>
   <% if @user.profile %>
     <h3> <%= "#{@profile.real_name || @profile.alias} Profile" %> </h3>

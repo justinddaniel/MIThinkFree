@@ -2,6 +2,8 @@
 
 <h3> You can select the ones you are interested in, or create a new one! </h3>
 
+<span> Note: hitting submit will overwrite your old interests </span><br>
+
 <form action='/interests'>
   <%= collection_check_boxes(:current_user, :interest_ids, @interests, :id, :title) %>
   <input type='submit'>
