@@ -6,7 +6,7 @@
 
 <ul>
 <% @user.interests.each do |interest| %>
-  <li> <%= interest.title %> </li>
+  <li> <%= interest.title %> (<%= interest.user_names %> also share this interest) </li>
 <% end %>
 </ul>
 
