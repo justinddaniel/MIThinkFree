@@ -5,15 +5,7 @@ class Interest < ApplicationRecord
 
   def user_names
     self.users.map do |user|
-      if user.profile
-        if user.profile.real_name
-          user.profile.real_name
-        else
-          user.profile.alias
-        end
-      else
-        user.email
-      end
+      user.display_name
     end.join(', ')
   end
 end

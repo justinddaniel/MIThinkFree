@@ -24,4 +24,16 @@ class User < ApplicationRecord
       "#{interest.user_names} share a passion for #{interest.title} with you"
     end
   end
+
+  def display_name
+    if self.profile
+      if !self.profile.real_name.empty? && !self.profile.real_name.nil?
+        self.profile.real_name
+      else
+        self.profile.alias
+      end
+    else
+      self.email
+    end
+  end
 end
