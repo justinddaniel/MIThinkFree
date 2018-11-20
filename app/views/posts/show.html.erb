@@ -1,12 +1,22 @@
 <h1> <%= @post.title %> </h1>
 
-<% @post.comments.each do |comment| %>
-  <p> <strong> <%= comment.user.email %> said: </strong> </p>
-  <p> <%= comment.body %> </p>
-  <p> Commented on [ <%= comment.created_at %> ] </p>
-      <% if comment.user_id == current_user.id %>
-        <%= button_to 'Delete comment', post_comment_path(@post.id, comment.id), method: 'delete' %>
-      <% end %>
+<p> <%= @post.body %> </p>
+
+<p> Posted by <%= @post.user.display_name %> on <%= @post.created_at %> </p>
+
+<% if @post.comments.size == 0 %>
+  <h3> No comments yet! Be the first to comment! </h3>
+<% else %>
+  <h3> Reply comments: </h3>
+
+  <% @post.comments.each do |comment| %>
+    <p> <strong> <%= comment.user.display_name %> said: </strong> </p>
+    <p> <%= comment.body %> </p>
+    <p> Commented on [ <%= comment.created_at %> ] </p>
+        <% if comment.user_id == current_user.id %>
+          <%= button_to 'Delete comment', post_comment_path(@post.id, comment.id), method: 'delete' %>
+        <% end %>
+  <% end %>
 <% end %>
 
 <h3> Write a new comment </h3>

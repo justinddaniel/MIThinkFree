@@ -13,7 +13,7 @@
     <% if post.comments.last %>
       <% comment = post.comments.last %>
       <p> <strong> Latest Comment: </strong> </p>
-      <p> <%= comment.user.email %> replied: </p>
+      <p> <%= comment.user.display_name %> replied: </p>
       <p> <%= comment.body %> </p>
       <p> [At <%= comment.created_at %>] </p>
       <% if comment.user_id == current_user.id %>
