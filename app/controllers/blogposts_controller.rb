@@ -7,11 +7,11 @@ class BlogpostsController < ApplicationController
   end
 
   def create
-    blogpost = Blogpost.new
-    blogpost.user_id = params[:user_id]
-    blogpost.title = params[:blogpost][:title]
-    blogpost.body = params[:blogpost][:body]
-    blogpost.save
+    @blogpost = Blogpost.new
+    @blogpost.user_id = params[:user_id]
+    @blogpost.title = params[:blogpost][:title]
+    @blogpost.body = params[:blogpost][:body]
+    @blogpost.save
     redirect_to "/users/#{params[:user_id]}"
   end
 

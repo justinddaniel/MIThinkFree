@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     if profile.save
       redirect_to "/users/#{current_user.id}"
     else
-      @profile = Profile.new
+      @profile = profile
       @user = current_user
       render :new
     end
@@ -40,6 +40,8 @@ class ProfilesController < ApplicationController
     if profile.save
       redirect_to "/users/#{current_user.id}"
     else
+      @user = current_user
+      @profile = profile
       render :edit
     end
   end
