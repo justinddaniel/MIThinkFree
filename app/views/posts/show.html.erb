@@ -13,6 +13,14 @@
     <p> <strong> <%= comment.user.display_name %> said: </strong> </p>
     <p> <%= comment.body %> </p>
     <p> Commented on [ <%= comment.created_at %> ] </p>
+    <% if !current_user.likes?(comment) %>
+      <form action="/commentlikes" method='post'>
+        <input type='hidden' name='users_id' value=<%= current_user.id %>>
+        <input type='hidden' name='comments_id' value=<%= comment.id %>>
+        <input type='submit' value='Like'>
+      </form><br>
+    <% end %>
+    <p> <%= comment.likes %> members like this </p>
         <% if comment.user_id == current_user.id %>
           <%= button_to 'Delete comment', post_comment_path(@post.id, comment.id), method: 'delete' %>
         <% end %>
