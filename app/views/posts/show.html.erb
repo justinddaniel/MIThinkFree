@@ -4,6 +4,11 @@
 
 <p> Posted by <%= @post.user.display_name %> on <%= @post.created_at %> </p>
 
+<p> <%= post.likes %> members like this </p>
+<div>
+  <%= render partial: '/postlikes', locals: {post: @post, current_user: current_user} %>
+</div>
+
 <% if @post.comments.size == 0 %>
   <h3> No comments yet! Be the first to comment! </h3>
 <% else %>
