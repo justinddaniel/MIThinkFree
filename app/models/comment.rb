@@ -7,4 +7,8 @@ class Comment < ApplicationRecord
   def likes
     self.commentlikes.size
   end
+
+  def find_commentlike(user)
+    self.commentlikes.find{|commentlike| commentlike.user_id == user.id}
+  end
 end
