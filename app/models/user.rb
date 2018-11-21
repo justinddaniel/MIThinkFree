@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_one :profile
   has_many :commentlikes
   has_many :postlikes
+  has_many :blogpostlikes
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -45,5 +46,9 @@ class User < ApplicationRecord
 
   def likes_post?(post)
     post.postlikes.find{|postlike| postlike.user_id == self.id} ? true : false
+  end
+
+  def likes_blogpost?(blogpost)
+    blogpost.blogpostlikes.find{|blogpostlike| blogpostlike.user_id == self.id} ? true: false
   end
 end

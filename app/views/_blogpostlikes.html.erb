@@ -1,0 +1,14 @@
+<% if !current_user.likes_blogpost?(blogpost) %>
+  <form action="/blogpostlikes" method='post'>
+    <input type='hidden' name='users_id' value=<%= current_user.id %>>
+    <input type='hidden' name='blogposts_id' value=<%= blogpost.id %>>
+    <input type='submit' value='Like'>
+  </form><br>
+<% else %>
+<form action="/blogpostlikes/<%= blogpost.find_blogpostlike(current_user).id %>" method='post'>
+  <input type="hidden" name="_method" value="DELETE">
+  <input type='hidden' name='users_id' value=<%= current_user.id %>>
+  <input type='hidden' name='blogposts_id' value=<%= blogpost.id %>>
+  <input type='submit' value='Unlike'>
+</form><br>
+<% end %>

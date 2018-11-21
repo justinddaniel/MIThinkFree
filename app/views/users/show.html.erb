@@ -41,6 +41,12 @@
 
     <p> <%= blogpost.body %> </p>
 
+    <p> <%= blogpost.likes %> members like this </p>
+
+    <div>
+      <%= render partial: '/blogpostlikes', locals: {blogpost: blogpost, current_user: current_user} %>
+    </div>
+
     <% if blogpost.user == current_user %>
 
       <%= button_to 'Edit Post', edit_user_blogpost_path(@user.id, blogpost.id), method: 'get' %><br>
