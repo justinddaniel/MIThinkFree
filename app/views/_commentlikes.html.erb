@@ -1,0 +1,14 @@
+<% if !current_user.likes?(comment) %>
+  <form action="/commentlikes" method='post'>
+    <input type='hidden' name='users_id' value=<%= current_user.id %>>
+    <input type='hidden' name='comments_id' value=<%= comment.id %>>
+    <input type='submit' value='Like'>
+  </form><br>
+<% else %>
+<form action="/commentlikes/<%= comment.find_commentlike(current_user).id %>" method='post'>
+  <input type="hidden" name="_method" value="DELETE">
+  <input type='hidden' name='users_id' value=<%= current_user.id %>>
+  <input type='hidden' name='comments_id' value=<%= comment.id %>>
+  <input type='submit' value='Unlike'>
+</form><br>
+<% end %>
