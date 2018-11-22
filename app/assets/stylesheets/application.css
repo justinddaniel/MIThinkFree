@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  color: red;
+}
+
+#navigation-menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+#navigation-menu .button_to {
+  margin: 0;
+  float: left;
+}

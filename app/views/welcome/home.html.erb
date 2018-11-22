@@ -1,14 +1,16 @@
-<h1> Welcome to Michigan Think Free! </h1>
+<h1 id='welcome-text'> Welcome to Michigan Think Free! </h1>
 
-<%= button_to "About Michigan Think Free", '/about', method: 'get' %><br>
+<div id='welcome-menu'>
+  <%= button_to "About Michigan Think Free", '/about', method: 'get' %><br>
 
-<%= button_to "Discussion Board", '/posts', method: 'get' %><br>
+  <%= button_to "Discussion Board", '/posts', method: 'get' %><br>
 
-<%= button_to "Member Blogs", users_path, method: 'get' %> <br>
+  <%= button_to "Member Blogs", users_path, method: 'get' %> <br>
 
-<%= button_to "Member Interests", '/interests', method: 'get' %> <br>
+  <%= button_to "Member Interests", '/interests', method: 'get' %> <br>
+</div>
 
 
-<div>
+<div id="navigation-menu">
   <%= render partial: '/navigation' %>
 </div>

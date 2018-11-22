@@ -1,10 +1,14 @@
 <% if current_user %>
-  <p> Welcome <%= current_user.display_name %>!</p><br>
-  <%= button_to 'Home', root_path, method: 'get' %><br>
-  <%= button_to 'Discussion Board', posts_path, method: 'get' %><br>
-  <%= button_to "Your Homepage", current_user, method: 'get' %><br>
-  <%= button_to "Sign Out", destroy_user_session_path, method: 'delete' %>
+  <h2> Welcome <%= current_user.display_name %>!</h2><br>
+  <div class='nav-footer'>
+    <%= button_to 'Home', root_path, method: 'get' %><br>
+    <%= button_to 'Discussion Board', posts_path, method: 'get' %><br>
+    <%= button_to "Your Homepage", current_user, method: 'get' %><br>
+    <%= button_to "Sign Out", destroy_user_session_path, method: 'delete' %>
+  </div>
 <% else %>
-  <%= button_to "Log In", new_user_session_path, method: 'get' %><br>
-  <%= button_to "Sign Up", new_user_registration_path, method: 'get' %>
+  <div class='nav-footer'>
+    <%= button_to "Log In", new_user_session_path, method: 'get' %><br>
+    <%= button_to "Sign Up", new_user_registration_path, method: 'get' %>
+  </div>
 <% end %>
